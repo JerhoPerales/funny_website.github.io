@@ -1,0 +1,507 @@
+@import url(colors.css);
+
+/* ==================== GLOBAL ==================== */
+
+html { scroll-behavior: smooth; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--Text_Dark);
+  line-height: 1.6;
+  background: var(--Neco_Body);
+}
+
+/* Centered container for consistent page width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==================== NAVIGATION BAR ==================== */
+.navbar {
+  background: var(--Neco_LightBlue);
+  padding: 20px 0;
+  box-shadow: 0 2px 5px var(--Shadow);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--White);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--Neco_Head);
+}
+
+/* ==================== HERO/BANNER ==================== */
+.banner {
+  background: linear-gradient(rgba(73, 87, 123, 0.7), rgba(73, 87, 123, 0.7)), url('assets/neco_banner.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--White);
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.banner-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.banner-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.btn-primary {
+  background: var(--White);
+  color: var(--Neco_LightBlue);
+  border: none;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 6px;
+}
+
+.btn-primary:hover {
+  background: var(--Gray_Light);
+  transform: translateY(-2px);
+}
+
+/* ==================== PRODUCTS ==================== */
+.Necos {
+  padding: 80px 20px;
+  background: var(--White);
+}
+
+.Necos h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.product-card {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  background: var(--Neco_LightBlue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: background 0.3s;
+}
+
+.product-card:hover .icon-circle {
+  background: var(--Neco_Blue);
+}
+
+.product-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.product-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.product-card p {
+  color: var(--Text_Light);
+  line-height: 1.6;
+}
+
+/* ==================== MODAL ==================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.3s;
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background-color: var(--White);
+  border-radius: 15px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  animation: slideIn 0.3s;
+  box-shadow: 0 10px 40px var(--Shadow_Dark);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-inner {
+  display: flex;
+  flex-direction: row;
+}
+
+.modal-image {
+  flex: 0 0 300px;
+  background: linear-gradient(135deg, var(--Neco_LightBlue), #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.modal-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.modal-text {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.modal-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--Text_Dark);
+}
+
+.modal-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--Text_Light);
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--Text_Light);
+  cursor: pointer;
+  background: var(--White);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: none;
+  z-index: 10;
+}
+
+
+/* ==================== CREATOR SECTION ==================== */
+.Creator {
+  padding: 20px 20px;
+  background: var(--Neco_Body);
+}
+
+.Creator .container > .Creator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.Creator h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.Creator img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ==================== TESTIMONIALS ==================== */
+.testimonial {
+  padding: 80px 20px;
+  background: var(--White);
+}
+
+.testimonial-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.testimonial-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--Neco_Body);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--Shadow);
+  padding: 20px;
+  flex: 1;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-text h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: var(--Text_Dark);
+}
+
+
+.arrow {
+  background: var(--White);
+  border: 1px solid var(--Gray_Light);
+  color: var(--Text_Dark);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.arrow:hover {
+  background: var(--Gray_Light);
+}
+
+/* ==================== CONTACT ==================== */
+.contact {
+  padding: 80px 20px;
+  background: var(--Neco_Body);
+}
+
+.contact-header h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  text-align: center;
+  color: var(--Text_Light);
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  background: var(--White);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--Shadow);
+  padding: 24px;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--Gray_Light);
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.textarea {
+  min-height: 140px;
+  resize: vertical;
+  margin-top: 8px;
+}
+
+.btn-contact {
+  background: var(--Neco_LightBlue);
+  color: var(--White);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 12px;
+}
+
+.btn-contact:hover {
+  background: var(--Neco_Blue);
+}
+
+.contact-fanbox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+  color: var(--Text_Dark);
+}
+
+.contact-neco {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+  background: linear-gradient(135deg, var(--Neco_Blue), var(--Neco_LightBlue));
+  color: var(--Footer_Text);
+}
+
+.footer .container {
+  padding: 40px 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+}
+
+.footer-col h4 {
+  color: var(--White);
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.footer-col p,
+.footer-col a {
+  color: var(--Footer_Text);
+  text-decoration: none;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.footer-brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.footer-quote {
+  color: var(--White);
+  font-weight: 600;
+}
+
+.footer-col a:hover {
+  color: var(--White);
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--Neco_Head);
+  color: var(--White);
+  font-weight: bold;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--Footer_Border);
+  padding: 16px 0;
+  text-align: center;
+}

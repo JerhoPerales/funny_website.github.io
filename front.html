@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buranya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Brand logo in navbar -->
+            <div class="logo">
+                <img src="assets/neco head.png" alt="Company Logo" class="logo-img">
+            </div>
+            <!-- Navigation links pointing to page sections -->
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#necos">Necos</a></li>
+                <li><a href="#creator">Creator</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==================== BANNER SECTION ==================== -->
+    <section class="banner" id="home">
+        <div class="banner-content">
+            <h1>WE HELP YOUR SAD LIFE</h1>
+            <p>It is a long established fact that a neco enjoyer will be happy when<br>owning their very own neco</p>
+            <!-- Call-to-action: opens a Neco-themed modal -->
+            <a class="btn-primary" href="#necos" id="nyanMore">NYAN MORE</a>
+        </div>
+    </section>
+
+    <!-- ==================== NECOS SECTION ==================== -->
+    <section class="Necos" id="necos">
+        <div class="container">
+            <h2>OUR DIFFERENT TYPES OF NECO</h2>
+            <!-- Grid of Neco cards; clicking opens details in modal -->
+            <div class="product-grid">
+
+                <!-- Neco Card 1: Destiny -->
+                <div class="product-card" onclick="openModal('destiny')">
+                    <div class="icon-circle">
+                        <img src="assets/neco_destinyd.png" alt="Destiny Icon" class="product-icon">
+                    </div>
+                    <h3>Destiny</h3>
+                    <p>Destiny is a Neco Spirit residing in Ahnenerbe in Carnival Phantasm and Fate/Grand Carnival.</p>
+                </div>
+
+                <!-- Neco Card 2: Chaos -->
+                <div class="product-card" onclick="openModal('chaos')">
+                    <div class="icon-circle">
+                        <img src="assets/neco_chaos.png" alt="Chaos Icon" class="product-icon">
+                    </div>
+                    <h3>Chaos</h3>
+                    <p>Chaos is a parody character, a Chaos-styled Neco-Arc, that came to be through a mutation.</p>
+                </div>
+
+                <!-- Neco Card 3: Bubbles -->
+                <div class="product-card" onclick="openModal('bubbles')">
+                    <div class="icon-circle">
+                        <img src="assets/neco_bubbles.png" alt="Bubbles Icon" class="product-icon">
+                    </div>
+                    <h3>Bubbles</h3>
+                    <p>Bubbles is a Neco Spirit residing in Ahnenerbe in Carnival Phantasm and Fate/Grand Carnival.</p>
+                </div>
+
+                <!-- Neco Card 4: NecoCield -->
+                <div class="product-card" onclick="openModal('necoCield')">
+                    <div class="icon-circle">
+                        <img src="assets/NecoCield.png" alt="NecoCield Icon" class="product-icon">
+                    </div>
+                    <h3>NecoCield</h3>
+                    <p>Neco-Ciel is a Neco Spirit appearing in the Tsukihime Remake series. She is a parody of Ciel.</p>
+                </div>
+
+                <!-- Neco Card 5: Mysterious Neco Z -->
+                <div class="product-card" onclick="openModal('necoZ')">
+                    <div class="icon-circle">
+                        <img src="assets/Mysterious Neco Z.png" alt="Mysterious Neco Z Icon" class="product-icon">
+                    </div>
+                    <h3>Mysterious Neco Z</h3>
+                    <p>Mysterious Neco Z is a Neco Spirit parody of Merlin residing in Ahnenerbe Chaldea in Fate/Grand Carnival.</p>
+                </div>
+
+                <!-- Neco Card 6: necocolight -->
+                <div class="product-card" onclick="openModal('necocolight')">
+                    <div class="icon-circle">
+                        <img src="assets/Necocolight.png" alt="Necocolight Icon" class="product-icon">
+                    </div>
+                    <h3>Necocolight</h3>
+                    <p>Necoco-Necocolight is a Neco Spirit resembling Mash Kyrielight residing in Great Cat's Village.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MODAL/POPUP ==================== -->
+    <div id="productModal" class="modal" onclick="closeModalOnOutside(event)">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <div class="modal-inner">
+                <div class="modal-image">
+                    <!-- Modal image set dynamically -->
+                    <img id="modalImage" src="" alt="Product Image">
+                </div>
+                <div class="modal-text">
+                    <!-- Modal title and description set dynamically -->
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CREATOR SECTION ==================== -->
+    <section class="Creator" id="creator">
+        <div class="container">
+            <div class="Creator">
+                <div class="Creator">
+                    <!-- Two-column layout: text and image -->
+                    <h2>WHO MADE THIS GOD AWFUL WEBSITE?</h2>
+                    <p>It's me! Jerho Evan F. Perales, Yes while this project was supoosed to be for our final output on IT ELECTIVE 3
+                    I just couldnt help but make it all about my beloved neco arc. </p>
+                </div>
+                <div class="Creator">
+                    <img src="assets/BUFF_JERHO.jpg" alt="Creator">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIAL SECTION ==================== -->
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <!-- Testimonial slider: arrows navigate items -->
+                <button class="arrow arrow-left">‹</button>
+                <div class="testimonial-card">
+                    <img src="assets/testimonial-profile.jpg" alt="Client Profile" class="profile-img">
+                    <div class="testimonial-text">
+                        <h3>JON DEO</h3>
+                        <p>It is a long established fact that a reader will be distracted by the readable contents of a page when looking at its layout.</p>
+                    </div>
+                </div>
+                <button class="arrow arrow-right">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-header">
+                <h2>CONTACT NECO ARC</h2>
+                <p>Drop a meow and she might meow back.</p>
+            </div>
+            <!-- Contact form fields -->
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <input type="text" placeholder="Your Name" required class="input">
+                    <input type="email" placeholder="Email" required class="input">
+                </div>
+                <textarea placeholder="Your Message to Neco Arc..." required class="textarea"></textarea>
+                <button class="btn-contact" type="submit">Send Meow</button>
+            </form>
+            <div class="contact-fanbox">
+                <img src="assets/oni-arc.png" alt="Neco Arc" class="contact-neco" onerror="this.src='assets/neco_chaos.png'">
+                <p>"NYA~ Thanks for the praise!"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>About Neco Arc</h4>
+                    <div class="footer-brand">
+                        <img src="assets/cinemad.png" alt="Neco Arc">
+                        <span class="footer-quote">Peak meow. Peak comedy. Peak life.</span>
+                    </div>
+                    <p>Neco Arc is the ultimate source of joy and chaos. If you smile at her, she meows back.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <!-- Links to site sections -->
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#necos">Necos</a></li>
+                        <li><a href="#creator">Creator</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>Ahnenerbe, Necoverse</p>
+                    <p>NYA-000-ARC</p>
+                    <div class="social-icons">
+                        <a href="#" title="Praise">NYA</a>
+                        <a href="#" title="Meow">MEOW</a>
+                        <a href="#" title="Arc">ARC</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2017 | Alfa | designed All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mga modals
+        const products = {
+            destiny: {
+                title: "Destiny",
+                image: "assets/neco_destinyd.png",
+                description: "Destiny is a Neco Spirit residing in Ahnenerbe in Carnival Phantasm and Fate/Grand Carnival. This mystical creature brings joy and happiness to all who encounter it. With its cheerful personality and magical abilities, Destiny has become a beloved character among fans. Known for its distinctive appearance and playful nature, Destiny represents hope and positivity in the Neco universe."
+            },
+            chaos: {
+                title: "Chaos",
+                image: "assets/neco_chaos.png",
+                description: "Chaos is a parody character, a Chaos-styled Neco-Arc, that came to be through a mutation. This unique variation showcases the unpredictable and entertaining nature of the Neco species. With its distinctive appearance and quirky personality, Chaos has gained a cult following. Despite its name, Chaos brings laughter and joy to fans everywhere with its comedic antics and memorable moments."
+            },
+            bubbles: {
+                title: "Bubbles",
+                image: "assets/neco_bubbles.png",
+                description: "Bubbles is a Neco Spirit residing in Ahnenerbe in Carnival Phantasm and Fate/Grand Carnival. Known for its bubbly personality and infectious energy, Bubbles brightens up every scene it appears in. This lovable character has captured the hearts of many with its endearing traits and fun-loving spirit. Bubbles represents the lighter side of the Neco world and continues to be a fan favorite."
+            },
+            necoCield: {
+                title: "NecoCield",
+                image: "assets/NecoCield.png",
+                description: "Neco-Ciel is one of the many “Neco” variations—small, cat-eared, comedic mascots that parody Type-Moon characters. These characters usually appear in gag segments, omake materials, manga extras, or crossover titles like Melty Blood side comics."
+            },
+            necoZ: {
+                title: "Mysterious Neco Z",
+                image: "assets/Mysterious Neco Z.png",
+                description: "Mysterious Neco Z resides in Ahnenerbe Chaldea, a parody version of Chaldea that blends the multiverse café Ahnenerbe (from Tsukihime and Kagetsu Tohya) with the comedic setting of Carnival Phantasm–style worlds."
+            },
+            necocolight: {
+                title: "Necocolight",
+                image: "assets/Necocolight.png",
+                description: "Necoco-Necocolight takes the defining traits of Mash—her loyalty, reliability, shy determination—and turns them into exaggerated, catlike comedic quirks. She acts as a “Neco Mash,” a miniature guardian-type mascot of the Great Cat’s Village, and often plays the straight man (or cat) amidst the surrounding chaos."
+            },
+            nyan: {
+                title: "Nyan More",
+                image: "assets/oni-arc.png",
+                description: "Praise Neco Arc! Explore the Necos below and let the meows guide you."
+            }
+        };
+
+        // Open modal and populate with selected product data
+        function openModal(productId) {
+            const modal = document.getElementById('productModal');
+            const product = products[productId];
+            
+            document.getElementById('modalTitle').textContent = product.title;
+            document.getElementById('modalImage').src = product.image;
+            document.getElementById('modalDescription').textContent = product.description;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        // modal closer
+        function closeModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal when clicking on outside the modal
+        function closeModalOnOutside(event) {
+            if (event.target.id === 'productModal') {
+                closeModal();
+            }
+        }
+
+        // Testimonial slider items: name, text, and image
+        const testimonials = [
+            { name: "Arc Enjoyer", text: "Neco Arc single-handedly cured my boredom. Peak character, peak vibes.", image: "assets/necowine.jpeg" },
+            { name: "Cat Lover", text: "Every meow from Neco Arc adds +10 happiness. Truly life-changing.", image: "assets/jiro.jpg" },
+            { name: "Giga Fan", text: "Neco Arc is the final form of entertainment. I am but a disciple.", image: "assets/moist.png" },
+            { name: "Simp Supreme", text: "I wake up, I gaze at Neco Arc, I prosper. That is the way.", image: "assets/sanji.png" },
+            { name: "Lore Scholar", text: "Studied Neco Arc for years. Conclusion: perfect. No notes.", image: "assets/kaneki.jpg" }
+        ];
+
+        let tIndex = 0;
+        // Arrow buttons and text/image targets
+        const leftBtn = document.querySelector('.arrow-left');
+        const rightBtn = document.querySelector('.arrow-right');
+        const profileImg = document.querySelector('.profile-img');
+        const nameEl = document.querySelector('.testimonial-text h3');
+        const textEl = document.querySelector('.testimonial-text p');
+
+        // Render currently selected testimonial
+        function renderTestimonial() {
+            const t = testimonials[tIndex];
+            profileImg.src = t.image;
+            nameEl.textContent = t.name;
+            textEl.textContent = t.text;
+        }
+
+        // Navigate left
+        leftBtn.addEventListener('click', () => {
+            tIndex = (tIndex - 1 + testimonials.length) % testimonials.length;
+            renderTestimonial();
+        });
+
+        // Navigate right
+        rightBtn.addEventListener('click', () => {
+            tIndex = (tIndex + 1) % testimonials.length;
+            renderTestimonial();
+        });
+
+        // Initialize slider with first testimonial
+        renderTestimonial();
+
+        // Contact form: simple alert and reset for demo
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Neco Arc says: NYA~ Your message has been received!');
+                contactForm.reset();
+            });
+        }
+
+        // NYAN MORE: open themed modal instead of scrolling
+        const nyanMore = document.getElementById('nyanMore');
+        if (nyanMore) {
+            nyanMore.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal('nyan');
+            });
+        }
+    </script>
+</body>
+</html>

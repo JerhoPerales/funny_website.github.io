@@ -1,0 +1,26 @@
+:root {
+/* neco colors */
+--Neco_Head: #f3d0aa;
+--Neco_Blue: #49577b;
+--Neco_LightBlue: #667eea;
+--Neco_Gray: #4a4c53;
+--Neco_Body: #fee9d4;
+--Neco_Red: #a50001;
+
+
+/* boring colors */
+--White: #ffffff;
+--Black: #000000;
+--Text_Dark: #333333;
+--Text_Light: #666666;
+--Shadow: rgba(0,0,0,0.1);
+--Shadow_Dark: rgba(0,0,0,0.3);
+--Footer_BG: #2c2c2c;
+--Footer_Border: #444444;
+--Footer_Text: #cccccc;
+--Green: #4caf50;
+--Green_Light: #7ed957;
+--Green_Hover: #45a049;
+--Gray_Light: #f0f0f0;
+--Gray_BG: #f9f9f9;
+}
